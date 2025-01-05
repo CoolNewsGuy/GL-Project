@@ -14,13 +14,11 @@ import java.util.List;
 public class Catégorie {
     private int idCategorie;
     private String name;
-    private List<String> subcategories;
 
     // Constructor
     Catégorie(int idCategorie, String name, List<String> subcategories) {
         this.idCategorie = idCategorie;
         this.name = name;
-        this.subcategories = subcategories;
     }
 
     public int getIdCategorie() {
