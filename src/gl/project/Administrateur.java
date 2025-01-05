@@ -5,14 +5,14 @@
  */
 package gl.project;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
  * @author gh
  */
 public class Administrateur extends Utilisateur {
-    private List<Commande> commandes;
+    private ArrayList<Commande> commandes;
 
     // constructor
     public Administrateur(int idUtilisateur, String nom, String email, String telephone, String password) {
