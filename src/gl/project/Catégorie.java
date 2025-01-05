@@ -22,4 +22,12 @@ public class Catégorie {
         this.name = name;
         this.subcategories = subcategories;
     }
+
+    public int getIdCategorie() {
+        return idCategorie;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
