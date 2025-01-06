@@ -41,8 +41,20 @@ public class Client extends Utilisateur {
     }
 
     public void ajouterAuPanier(Produit produit, int quantite) {
-        panier.getCartItems().add(produit);
-        panier.getQuantities().add(quantite);
+        if (panier.getCartItems().containsKey(produit)) {
+            int produitQuantiteInPanier = panier.getCartItems().get(produit);
+
+            if (produitQuantiteInPanier >= produit.getQuantite()) {
+                System.out.println("Can't add product: " + produit.getName() + " (out of stock).");
+
+                return;
+            }
+
+            panier.cartItems.put(produit, produitQuantiteInPanier + 1);
+        } else {
+            panier.cartItems.put(produit, 1);
+        }
+
         panier.setTotalPrice(panier.getTotalPrice() + produit.getPrice() * quantite);
         System.out.println("Added to cart: " + produit.getName() + " (Quantity: " + quantite + ")");
     }
