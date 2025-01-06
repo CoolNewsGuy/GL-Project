@@ -10,7 +10,7 @@ package gl.project;
  * @author gh
  */
 public class Client extends Utilisateur {
-    private final Panier panier = new Panier();
+    public final Panier panier = new Panier();
 
     // Constructor
     public Client(int idUtilisateur, String nom, String email, String telephone, String password) {
@@ -32,10 +32,6 @@ public class Client extends Utilisateur {
         } else {
             System.out.println("Login failed: Incorrect email/phone or password.");
         }
-    }
-
-    public Panier getPanier() {
-        return panier;
     }
 
     public void sendMessage(String message) {
