@@ -18,9 +18,11 @@ public class Produit {
     private String category;
     private String subCategory;
     private String images;
+    private int quantite;
     private int likes = 0;
 
-    public Produit(int idProduit, String name, float price, String description, int stock, String category, String subCategory, String images) {
+    public Produit(int idProduit, String name, float price, String description, int stock, String category,
+            String subCategory, String images, int quantite) {
         this.idProduit = idProduit;
         this.name = name;
         this.price = price;
@@ -29,10 +31,11 @@ public class Produit {
         this.category = category;
         this.subCategory = subCategory;
         this.images = images;
+        this.quantite = quantite;
     }
 
     public void getProductDetails() {
-        System.out.println("Product: " + name + ", Price: " + price + ", Likes: " + likes);
+        System.out.println("Product: " + name + ", Price: " + price + ", Quantite: " + quantite + ", Likes: " + likes);
     }
 
     public void updateStock(int quantity) {
@@ -65,6 +68,8 @@ public class Produit {
     public float getPrice() {
         return price;
     }
-}
 
-    
+    public int getQuantite() {
+        return quantite;
+    }
+}
