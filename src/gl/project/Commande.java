@@ -42,12 +42,13 @@ public class Commande {
         for (Produit produit : cartItems) {
             System.out.println("- " + produit.getName() + " ($" + produit.getPrice() + ")");
         }
+
+        System.out.println("Total Price: $" + totalPrice);
     }
 
     public void approveCommande() {
         System.out.println("Commande approved with the following details:");
         viewCommandeDetails();
-        System.out.println("Total Price: $" + totalPrice);
         System.out.println("The order has been approved.");
     }
 
