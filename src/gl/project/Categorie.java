@@ -5,6 +5,7 @@
  */
 package gl.project;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,11 +15,19 @@ import java.util.List;
 public class Categorie {
     private int idCategorie;
     private String name;
+    private ArrayList<Produit> produits;
 
     // Constructor
-    Categorie(int idCategorie, String name, List<String> subcategories) {
+    Categorie(int idCategorie, String name, List<String> subcategories, ArrayList<Produit> produits) {
         this.idCategorie = idCategorie;
         this.name = name;
+        this.produits = produits;
+    }
+
+    public void viewProduitsDetails() {
+        for (Produit produit : produits) {
+            produit.getProductDetails();
+        }
     }
 
     public int getIdCategorie() {

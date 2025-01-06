@@ -23,4 +23,10 @@ public class Administrateur extends Utilisateur {
     public void replyToMessage(Client client, String message) {
         System.out.println("Message to " + client.getNom() + ": " + message);
     }
+
+    public void viewAllCommandes() {
+        for (Commande commande : commandes) {
+            commande.viewCommandeDetails();
+        }
+    }
 }
