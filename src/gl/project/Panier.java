@@ -30,6 +30,25 @@ public class Panier {
         this.totalPrice = totalPrice;
     }
 
+    public void ajouterAuPanier(Produit produit, int quantite) {
+        if (cartItems.containsKey(produit)) {
+            int produitQuantiteInPanier = cartItems.get(produit);
+
+            if (produitQuantiteInPanier >= produit.getQuantite()) {
+                System.out.println("Can't add product: " + produit.getName() + " (out of stock).");
+
+                return;
+            }
+
+            cartItems.put(produit, produitQuantiteInPanier + 1);
+        } else {
+            cartItems.put(produit, 1);
+        }
+
+        setTotalPrice(getTotalPrice() + produit.getPrice() * quantite);
+        System.out.println("Added to cart: " + produit.getName() + " (Quantity: " + quantite + ")");
+    }
+
     public void calculateTotal() {
         System.out.println("Total cart value: " + totalPrice);
     }
