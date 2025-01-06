@@ -13,16 +13,16 @@ import java.util.ArrayList;
  */
 public class Commande {
     private int orderID;
-    private int userID;
+    private Client client;
     private ArrayList<Produit> cartItems;
     private String orderDate;
     private String status;
     private float totalPrice;
 
     // Constructor
-    public Commande(int orderID, int userID, ArrayList<Produit> cartItems, String orderDate, String status) {
+    public Commande(int orderID, Client client, ArrayList<Produit> cartItems, String orderDate, String status) {
         this.orderID = orderID;
-        this.userID = userID;
+        this.client = client;
         this.cartItems = cartItems;
         this.orderDate = orderDate;
         this.status = status;
@@ -34,7 +34,7 @@ public class Commande {
 
     public void viewCommandeDetails() {
         System.out.println("Order ID: " + orderID);
-        System.out.println("User ID: " + userID);
+        System.out.println("User ID: " + client.idUtilisateur);
         System.out.println("Order Date: " + orderDate);
         System.out.println("Status: " + status);
         System.out.println("Products:");
