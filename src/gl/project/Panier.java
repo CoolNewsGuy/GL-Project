@@ -31,7 +31,7 @@ public class Panier {
 
         if (cartItems.containsKey(produit)) {
 
-            if (produitQuantiteInPanier >= produit.getQuantite()) {
+            if (produitQuantiteInPanier >= produit.getStock()) {
                 System.out.println("Can't add product: " + produit.getName() + " (out of stock).");
 
                 return;
@@ -39,16 +39,16 @@ public class Panier {
 
             int newQuantiteInPanier = produitQuantiteInPanier + quantite;
 
-            if (newQuantiteInPanier > produit.getQuantite()) {
-                newQuantiteInPanier = produit.getQuantite();
+            if (newQuantiteInPanier > produit.getStock()) {
+                newQuantiteInPanier = produit.getStock();
             }
 
             cartItems.put(produit, newQuantiteInPanier);
         } else {
             int newQuantiteInPanier = produitQuantiteInPanier + quantite;
 
-            if (newQuantiteInPanier > produit.getQuantite()) {
-                newQuantiteInPanier = produit.getQuantite();
+            if (newQuantiteInPanier > produit.getStock()) {
+                newQuantiteInPanier = produit.getStock();
             }
 
             cartItems.put(produit, quantite);
