@@ -32,8 +32,7 @@ public class Commande {
         }
     }
 
-    public void approveCommande() {
-        System.out.println("Commande approved with the following details:");
+    public void viewCommandeDetails() {
         System.out.println("Order ID: " + orderID);
         System.out.println("User ID: " + userID);
         System.out.println("Order Date: " + orderDate);
@@ -43,23 +42,18 @@ public class Commande {
         for (Produit produit : cartItems) {
             System.out.println("- " + produit.getName() + " ($" + produit.getPrice() + ")");
         }
+    }
 
+    public void approveCommande() {
+        System.out.println("Commande approved with the following details:");
+        viewCommandeDetails();
         System.out.println("Total Price: $" + totalPrice);
         System.out.println("The order has been approved.");
     }
 
     public void cancelCommande() {
         System.out.println("Commande cancelled with the following details:");
-        System.out.println("Order ID: " + orderID);
-        System.out.println("User ID: " + userID);
-        System.out.println("Order Date: " + orderDate);
-        System.out.println("Status: " + status);
-        System.out.println("Products:");
-
-        for (Produit produit : cartItems) {
-            System.out.println("- " + produit.getName() + " ($" + produit.getPrice() + ")");
-        }
-
+        viewCommandeDetails();
         System.out.println("The order has been cancelled.");
     }
 }
