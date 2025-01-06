@@ -20,8 +20,7 @@ public class Administrateur extends Utilisateur {
     }
 
     // Methods
-    public String replyToMessage(Client client, String message) {
+    public void replyToMessage(Client client, String message) {
         System.out.println("Message to " + client.getNom() + ": " + message);
-        return message
     }
 }
