@@ -10,12 +10,11 @@ package gl.project;
  * @author gh
  */
 public class Client extends Utilisateur {
-    private final Panier panier;
+    private final Panier panier = new Panier();
 
     // Constructor
     public Client(int idUtilisateur, String nom, String email, String telephone, String password) {
         super(idUtilisateur, nom, email, telephone, password);
-        this.panier = new Panier(); // Each client has one panier
     }
 
     // Methods
