@@ -22,6 +22,6 @@ public class Administrateur extends Utilisateur {
     // Methods
     public String replyToMessage(Client client, String message) {
         System.out.println("Message to " + client.getNom() + ": " + message);
-        return message;
+        return message
     }
 }

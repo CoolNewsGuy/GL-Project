@@ -6,23 +6,22 @@
 package gl.project;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author gh
  */
 public class Panier {
-     private final List<Produit> cartItems = new ArrayList<>();
-    private final List<Integer> quantities = new ArrayList<>();
+    private final ArrayList<Produit> cartItems = new ArrayList<>();
+    private final ArrayList<Integer> quantities = new ArrayList<>();
     private float totalPrice;
 
     // Methods
-    public List<Produit> getCartItems() {
+    public ArrayList<Produit> getCartItems() {
         return cartItems;
     }
 
-    public List<Integer> getQuantities() {
+    public ArrayList<Integer> getQuantities() {
         return quantities;
     }
 
