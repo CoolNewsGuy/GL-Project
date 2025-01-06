@@ -11,12 +11,12 @@ import java.util.List;
  *
  * @author gh
  */
-public class Catégorie {
+public class Categorie {
     private int idCategorie;
     private String name;
 
     // Constructor
-    Catégorie(int idCategorie, String name, List<String> subcategories) {
+    Categorie(int idCategorie, String name, List<String> subcategories) {
         this.idCategorie = idCategorie;
         this.name = name;
     }
