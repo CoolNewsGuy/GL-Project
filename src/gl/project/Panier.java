@@ -58,6 +58,23 @@ public class Panier {
         System.out.println("Added to cart: " + produit.getName() + " (Quantity: " + quantite + ")");
     }
 
+    public void supprimerDuPanier(Produit produit, int quantite) {
+        if (cartItems.containsKey(produit)) {
+            int quantiteInCart = cartItems.get(produit);
+
+            if (quantiteInCart <= quantite) {
+                cartItems.remove(produit);
+            } else {
+                cartItems.put(produit, quantiteInCart - quantite);
+            }
+
+            calculateTotal();
+            System.out.println("Removed from cart: " + produit.getName());
+        } else {
+            System.out.println("Product not found in cart.");
+        }
+    }
+
     public void calculateTotal() {
         totalPrice = 0f;
 

@@ -39,18 +39,6 @@ public class Client extends Utilisateur {
         return panier;
     }
 
-    void supprimerDuPanier(Produit produit, int quantite) {
-        int index = panier.getCartItems().indexOf(produit);
-        if (index >= 0) {
-            panier.setTotalPrice(panier.getTotalPrice() - produit.getPrice() * panier.getQuantities().get(index));
-            panier.getCartItems().remove(index);
-            panier.getQuantities().remove(index);
-            System.out.println("Removed from cart: " + produit.getName());
-        } else {
-            System.out.println("Product not found in cart.");
-        }
-    }
-
     public void sendMessage(String message) {
         System.out.println("Message from " + getNom() + ": " + message);
 
