@@ -5,21 +5,21 @@
  */
 package gl.project;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
  * @author gh
  */
 public class Commande {
-      private int orderID;
+    private int orderID;
     private int userID;
-    private List<Produit> cartItems;
+    private ArrayList<Produit> cartItems;
     private String orderDate;
     private String status;
 
     // Constructor
-    public Commande(int orderID, int userID, List<Produit> cartItems, String orderDate, String status) {
+    public Commande(int orderID, int userID, ArrayList<Produit> cartItems, String orderDate, String status) {
         this.orderID = orderID;
         this.userID = userID;
         this.cartItems = cartItems;
@@ -43,7 +43,7 @@ public class Commande {
         System.out.println("The order has been approved.");
     }
 
-  public void cancelCommande() {
+    public void cancelCommande() {
         System.out.println("Commande cancelled with the following details:");
         System.out.println("Order ID: " + orderID);
         System.out.println("User ID: " + userID);
@@ -55,6 +55,5 @@ public class Commande {
         }
         System.out.println("The order has been cancelled.");
     }
- 
-   
+
 }
