@@ -5,24 +5,21 @@
  */
 package gl.project;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  *
  * @author gh
  */
 public class Panier {
-    private final ArrayList<Produit> cartItems = new ArrayList<>();
-    private final ArrayList<Integer> quantities = new ArrayList<>();
+    public final Map<Produit, Integer> cartItems = new HashMap<>();
     private float totalPrice;
 
     // Methods
-    public ArrayList<Produit> getCartItems() {
+    public Map<Produit, Integer> getCartItems() {
         return cartItems;
-    }
-
-    public ArrayList<Integer> getQuantities() {
-        return quantities;
     }
 
     public float getTotalPrice() {
@@ -39,10 +36,9 @@ public class Panier {
 
     public void afficherPanier() {
         System.out.println("Products in the cart:");
-        for (int i = 0; i < cartItems.size(); i++) {
-            Produit product = cartItems.get(i);
-            int quantity = quantities.get(i);
-            System.out.println(product.getName() + " (Quantity: " + quantity + ")");
+
+        for (Entry<Produit, Integer> produitEntry : this.cartItems.entrySet()) {
+            System.out.println(produitEntry.getKey().getName() + " (Quantity: " + produitEntry.getValue() + ")");
         }
     }
 
