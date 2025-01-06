@@ -21,11 +21,13 @@ public class GLProject {
         client.login("alice@example.com", "password123");
 
         // Create a Produit
-        Produit laptop = new Produit(101, "Laptop", 1500.0f, "High-performance laptop", 10, "Electronics", "Computers", "image.jpg");
+        Produit laptop = new Produit(101, "Laptop", 1500.0f, "High-performance laptop", 10, "Electronics", "Computers",
+                "image.jpg");
         laptop.getProductDetails();
 
-        Produit produit2 = new Produit(102, "Smartphone", 700.0f, "Latest model smartphone", 20, "Electronics", "Mobile", "smartphone.jpg");
-        produit2.getProductDetails();
+        Produit smartphone = new Produit(102, "Smartphone", 700.0f, "Latest model smartphone", 20, "Electronics",
+                "Mobile", "smartphone.jpg");
+        smartphone.getProductDetails();
 
         // initial likes
         System.out.println("Likes: " + laptop.getLikes());
@@ -41,10 +43,10 @@ public class GLProject {
 
         // Crée un Panier
         client.ajouterAuPanier(laptop, 2); // Add 2 Laptops
-        client.ajouterAuPanier(produit2, 1); // Add 1 Smartphone
+        client.ajouterAuPanier(smartphone, 1); // Add 1 Smartphone
         client.getPanier().afficherPanier();
 
-        //Total Price
+        // Total Price
         System.out.println("Total Price in Cart: " + client.getPanier().getTotalPrice());
 
         // Remove product from chart
@@ -52,7 +54,8 @@ public class GLProject {
         client.getPanier().afficherPanier();
 
         // Place an order
-        Commande commande = new Commande(1, client.getIdUtilisateur(), client.getPanier().getCartItems(), "2025-01-03", "Pending");
+        Commande commande = new Commande(1, client.getIdUtilisateur(), client.getPanier().getCartItems(), "2025-01-03",
+                "Pending");
         commande.approveCommande();
 
         // Cancel the order
