@@ -26,10 +26,6 @@ public class Panier {
         return totalPrice;
     }
 
-    public void setTotalPrice(float totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
     public void ajouterAuPanier(Produit produit, int quantite) {
         if (cartItems.containsKey(produit)) {
             int produitQuantiteInPanier = cartItems.get(produit);
@@ -45,12 +41,16 @@ public class Panier {
             cartItems.put(produit, 1);
         }
 
-        setTotalPrice(getTotalPrice() + produit.getPrice() * quantite);
+        calculateTotal();
         System.out.println("Added to cart: " + produit.getName() + " (Quantity: " + quantite + ")");
     }
 
     public void calculateTotal() {
-        System.out.println("Total cart value: " + totalPrice);
+        totalPrice = 0f;
+
+        for (Entry<Produit, Integer> produitEntry : cartItems.entrySet()) {
+            totalPrice += produitEntry.getKey().getPrice() * produitEntry.getValue();
+        }
     }
 
     public void afficherPanier() {
