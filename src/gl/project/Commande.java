@@ -17,6 +17,7 @@ public class Commande {
     private ArrayList<Produit> cartItems;
     private String orderDate;
     private String status;
+    private float totalPrice;
 
     // Constructor
     public Commande(int orderID, int userID, ArrayList<Produit> cartItems, String orderDate, String status) {
@@ -25,6 +26,10 @@ public class Commande {
         this.cartItems = cartItems;
         this.orderDate = orderDate;
         this.status = status;
+
+        for (Produit produit : cartItems) {
+            this.totalPrice += produit.getPrice();
+        }
     }
 
     public void approveCommande() {
@@ -34,11 +39,11 @@ public class Commande {
         System.out.println("Order Date: " + orderDate);
         System.out.println("Status: " + status);
         System.out.println("Products:");
-        float totalPrice = 0;
+
         for (Produit produit : cartItems) {
             System.out.println("- " + produit.getName() + " ($" + produit.getPrice() + ")");
-            totalPrice += produit.getPrice();
         }
+
         System.out.println("Total Price: $" + totalPrice);
         System.out.println("The order has been approved.");
     }
@@ -50,10 +55,11 @@ public class Commande {
         System.out.println("Order Date: " + orderDate);
         System.out.println("Status: " + status);
         System.out.println("Products:");
+
         for (Produit produit : cartItems) {
             System.out.println("- " + produit.getName() + " ($" + produit.getPrice() + ")");
         }
+
         System.out.println("The order has been cancelled.");
     }
-
 }
