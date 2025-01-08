@@ -27,9 +27,8 @@ public class Panier {
     }
 
     public void ajouterAuPanier(Produit produit, int quantite) {
-        int produitQuantiteInPanier = cartItems.get(produit);
-
         if (cartItems.containsKey(produit)) {
+            int produitQuantiteInPanier = cartItems.get(produit);
 
             if (produitQuantiteInPanier >= produit.getStock()) {
                 System.out.println("Can't add product: " + produit.getName() + " (out of stock).");
@@ -45,7 +44,7 @@ public class Panier {
 
             cartItems.put(produit, newQuantiteInPanier);
         } else {
-            int newQuantiteInPanier = produitQuantiteInPanier + quantite;
+            int newQuantiteInPanier = quantite;
 
             if (newQuantiteInPanier > produit.getStock()) {
                 newQuantiteInPanier = produit.getStock();
