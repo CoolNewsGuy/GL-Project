@@ -5,7 +5,8 @@
  */
 package gl.project;
 
-import java.util.ArrayList;
+import java.util.Set;
+import java.util.Map.Entry;
 
 /**
  *
@@ -14,22 +15,19 @@ import java.util.ArrayList;
 public class Commande {
     private int orderID;
     private Client client;
-    private ArrayList<Produit> cartItems;
     private String orderDate;
     private String status;
     private float totalPrice;
+    public final Set<Entry<Produit, Integer>> cartItems;
 
     // Constructor
-    public Commande(int orderID, Client client, ArrayList<Produit> cartItems, String orderDate, String status) {
+    public Commande(int orderID, Client client, String orderDate, String status) {
         this.orderID = orderID;
         this.client = client;
-        this.cartItems = cartItems;
         this.orderDate = orderDate;
         this.status = status;
-
-        for (Produit produit : cartItems) {
-            this.totalPrice += produit.getPrice();
-        }
+        this.cartItems = client.panier.cartItems.entrySet();
+        this.totalPrice = client.panier.getTotalPrice();
     }
 
     public void viewCommandeDetails() {
@@ -39,7 +37,8 @@ public class Commande {
         System.out.println("Status: " + status);
         System.out.println("Products:");
 
-        for (Produit produit : cartItems) {
+        for (Entry<Produit, Integer> produitEntry : this.cartItems) {
+            Produit produit = produitEntry.getKey();
             System.out.println("- " + produit.getName() + " ($" + produit.getPrice() + ")");
         }
 
