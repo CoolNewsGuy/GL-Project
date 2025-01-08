@@ -22,9 +22,11 @@ public class GLProject {
         System.out.println();
 
         // Create a Produit
-        Produit laptop = new Produit(101, "Laptop", 1500.0f, "High-performance laptop", 10, "Electronics", "Computers",
+        Produit laptop = new Produit(101, "Laptop", 1500.0f, "High-performance laptop", 10, "Electronics",
+                "Computers",
                 "image.jpg");
-        Produit smartphone = new Produit(102, "Smartphone", 700.0f, "Latest model smartphone", 20, "Electronics",
+        Produit smartphone = new Produit(102, "Smartphone", 700.0f, "Latest model smartphone", 20,
+                "Electronics",
                 "Mobile", "smartphone.jpg");
 
         laptop.getProductDetails();
@@ -60,7 +62,7 @@ public class GLProject {
         System.out.println();
 
         // Place an order
-        Commande commande = new Commande(1, client.getIdUtilisateur(), client.panier.cartItems, "2025-01-03",
+        Commande commande = new Commande(1, client, "2025-01-03",
                 "Pending");
         commande.approveCommande();
         System.out.println();
