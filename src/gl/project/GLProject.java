@@ -45,22 +45,22 @@ public class GLProject {
         System.out.println();
 
         // Crée un Panier
-        client.ajouterAuPanier(laptop, 2); // Add 2 Laptops
-        client.ajouterAuPanier(smartphone, 1); // Add 1 Smartphone
+        client.panier.ajouterAuPanier(laptop, 2); // Add 2 Laptops
+        client.panier.ajouterAuPanier(smartphone, 1); // Add 1 Smartphone
         System.out.println();
-        client.getPanier().afficherPanier();
+        client.panier.afficherPanier();
 
         // Total Price
-        System.out.println("Total Price in Cart: " + client.getPanier().getTotalPrice());
+        System.out.println("Total Price in Cart: " + client.panier.getTotalPrice());
         System.out.println();
 
         // Remove product from chart
-        client.supprimerDuPanier(laptop, 1);
-        client.getPanier().afficherPanier();
+        client.panier.supprimerDuPanier(laptop, 1);
+        client.panier.afficherPanier();
         System.out.println();
 
         // Place an order
-        Commande commande = new Commande(1, client.getIdUtilisateur(), client.getPanier().getCartItems(), "2025-01-03",
+        Commande commande = new Commande(1, client.getIdUtilisateur(), client.panier.cartItems, "2025-01-03",
                 "Pending");
         commande.approveCommande();
         System.out.println();
