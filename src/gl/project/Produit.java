@@ -10,10 +10,12 @@ package gl.project;
  * @author gh
  */
 public class Produit {
+    @SuppressWarnings("unused")
     private int idProduit;
     private String name;
     private float price;
     private int stock;
+    @SuppressWarnings("unused")
     private Categorie category;
     private int likes = 0;
 
