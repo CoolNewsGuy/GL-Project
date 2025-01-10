@@ -14,10 +14,10 @@ public class Produit {
     private String name;
     private float price;
     private int stock;
-    private String category;
+    private Categorie category;
     private int likes = 0;
 
-    public Produit(int idProduit, String name, float price, int stock, String category) {
+    public Produit(int idProduit, String name, float price, int stock, Categorie category) {
         this.idProduit = idProduit;
         this.name = name;
         this.price = price;
