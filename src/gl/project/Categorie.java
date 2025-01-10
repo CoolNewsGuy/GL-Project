@@ -24,6 +24,10 @@ public class Categorie {
         this.produits = produits;
     }
 
+    public void addProduit(Produit produit) {
+        this.produits.add(produit);
+    }
+
     public void viewProduitsDetails() {
         for (Produit produit : produits) {
             produit.getProductDetails();
