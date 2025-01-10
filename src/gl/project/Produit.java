@@ -23,6 +23,7 @@ public class Produit {
         this.price = price;
         this.stock = stock;
         this.category = category;
+        category.addProduit(this);
     }
 
     public void getProductDetails() {
