@@ -18,7 +18,7 @@ public class Categorie {
     private ArrayList<Produit> produits;
 
     // Constructor
-    Categorie(int idCategorie, String name, List<String> subcategories, ArrayList<Produit> produits) {
+    Categorie(int idCategorie, String name, ArrayList<Produit> produits) {
         this.idCategorie = idCategorie;
         this.name = name;
         this.produits = produits;
