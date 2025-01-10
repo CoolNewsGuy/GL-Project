@@ -5,6 +5,8 @@
  */
 package gl.project;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author gh
@@ -21,13 +23,13 @@ public class GLProject {
         client.login("alice@example.com", "password123");
         System.out.println();
 
+        // Create a Categorie
+        Categorie electronics = new Categorie(1, "Eletronics", new ArrayList<>());
+
         // Create a Produit
-        Produit laptop = new Produit(101, "Laptop", 1500.0f, "High-performance laptop", 10, "Electronics",
-                "Computers",
-                "image.jpg");
-        Produit smartphone = new Produit(102, "Smartphone", 700.0f, "Latest model smartphone", 20,
-                "Electronics",
-                "Mobile", "smartphone.jpg");
+        Produit laptop = new Produit(101, "Laptop", 1500.0f, 10, electronics);
+        Produit smartphone = new Produit(102, "Smartphone", 700.0f, 20,
+                electronics);
 
         laptop.getProductDetails();
         smartphone.getProductDetails();
