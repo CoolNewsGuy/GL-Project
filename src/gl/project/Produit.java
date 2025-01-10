@@ -13,23 +13,16 @@ public class Produit {
     private int idProduit;
     private String name;
     private float price;
-    private String description;
     private int stock;
     private String category;
-    private String subCategory;
-    private String images;
     private int likes = 0;
 
-    public Produit(int idProduit, String name, float price, String description, int stock, String category,
-            String subCategory, String images) {
+    public Produit(int idProduit, String name, float price, int stock, String category) {
         this.idProduit = idProduit;
         this.name = name;
         this.price = price;
-        this.description = description;
         this.stock = stock;
         this.category = category;
-        this.subCategory = subCategory;
-        this.images = images;
     }
 
     public void getProductDetails() {
